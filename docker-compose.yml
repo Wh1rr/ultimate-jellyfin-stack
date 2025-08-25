@@ -156,7 +156,7 @@ services:
 
   #jellyseer - allows users to request media on their own
   jellyseerr:
-    image: fallenbagel/jellyseerr:latest
+    image: fallenbagel/jellyseerr:preview-music-support
     container_name: jellyseerr
     environment:
       - PUID=${PUID}
