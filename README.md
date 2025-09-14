@@ -26,7 +26,7 @@ This Plex Stack includes the following services:
 - **Decluttarr:** Used to maintain/clean your *arr app queues and downloads.
 - **Jellystat:** Used to monitor the usage of each user or content on your jellyfin server.
 - **Janitorr:** Removes untagged media when it reaches a certain age, contains functionality for "Leaving Soon" content too.
-- **Profilarr:** Profilarr is a quality profile management tool that configures your radarr/sonarr installations
+- **Profilarr:** Used as a quality profile management tool that configures your radarr/sonarr installations
 
 ![containers](https://github.com/user-attachments/assets/855014b1-2716-4370-975d-a02564df881e)
 
@@ -34,12 +34,7 @@ This Plex Stack includes the following services:
 
 1. Linux
 2. Docker / Docker Compose
-3. OPTIONAL: Portainer - Docker GUI
-
-## How to Use - Using portainer
-1. Create a new stack using the Repository build method
-2. Add this link `https://github.com/Wh1rr/ultimate-jellyfin-stack/blob/main/docker-compose.yml` as repository URL
-3. Add your environment variables using the below examples.
+3. OPTIONAL: Komodo - Docker GUI
 
 ## Example of Environment variables in Portainer
 Keep in mind some variable names have changed since this screenshot was taken
@@ -73,6 +68,6 @@ Anytime you reference your media folder in a container you want the path to look
 ## Recommendations
 
 1. Get familiar with reverse proxies
-2. Install portainer to manage and monitor containers
+2. Install komodo to manage and monitor containers
 3. Use Cloudflare tunnels
 
