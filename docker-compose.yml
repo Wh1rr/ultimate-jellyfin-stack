@@ -389,7 +389,7 @@ services:
     environment:
       - POSTGRES_HOST=dispatcharr_db
       - POSTGRES_DB=${DISPATCHARR_DB}
-      - POSTGRES_USER=${DISPATCHARR_USERE}
+      - POSTGRES_USER=${DISPATCHARR_USER}
       - POSTGRES_PASSWORD=${DISPATCHARR_PASSWORD}
       - REDIS_HOST=redis
       - CELERY_BROKER_URL=redis://dispatcharr_redis:6379/0
