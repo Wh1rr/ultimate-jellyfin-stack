@@ -393,7 +393,7 @@ services:
       - 8191:8191/tcp # flaresolverr
       - 9696:9696/tcp # prowlarr
       - 7474:7474/tcp # autobrr
-      - 9191:9191/tcp # dispatcharr
+      - 9191:9191 # dispatcharr
     networks:
       - starr
       - proxy
