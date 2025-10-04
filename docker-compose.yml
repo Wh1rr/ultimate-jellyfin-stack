@@ -348,8 +348,7 @@ services:
     #   dockerfile: Dockerfile
     image: ghcr.io/dispatcharr/dispatcharr:latest
     container_name: dispatcharr
-    ports:
-      - 9191:9191
+    network_mode: "service:gluetun"
     volumes:
       - ${BASE_PATH}/dispatcharr/data:/data
     environment:
@@ -397,8 +396,7 @@ services:
       - 8191:8191/tcp # flaresolverr
       - 9696:9696/tcp # prowlarr
       - 7474:7474/tcp # autobrr
-      - 5004:5004/tcp # cabernet
-      - 6077:6077/tcp # cabernet
+      - 9191:9191/tcp # dispatcharr
     networks:
       - starr
       - proxy
