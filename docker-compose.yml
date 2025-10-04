@@ -350,8 +350,8 @@ services:
     volumes:
       - ${BASE_PATH}/dispatcharr/data:/data
     depends_on:
-      - db
-      - redis
+      - dispatcharr_db
+      - dispatcharr_redis
     environment:
       - POSTGRES_HOST=dispatcharr_db
       - POSTGRES_DB=${DISPATCHARR_DB}
@@ -380,8 +380,8 @@ services:
     image: ghcr.io/dispatcharr/dispatcharr:latest
     container_name: dispatcharr_celery
     depends_on:
-      - db
-      - redis
+      - dispatcharr_db
+      - dispatcharr_redis
     volumes:
       - ${BASE_PATH}/dispatcharr/celery:/app
     extra_hosts:
