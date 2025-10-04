@@ -342,18 +342,78 @@ services:
     networks:
       - starr
 
-  cabernet:
-    image: ghcr.io/cabernetwork/cabernet:latest
-    container_name: cabernet
-    restart: unless-stopped
-    network_mode: "service:gluetun"
+  dispatcharr_web:
+    image: ghcr.io/dispatcharr/dispatcharr:latest
+    container_name: dispatcharr_web
+    ports:
+      - 9191:9191
     volumes:
-      - ${BASE_PATH}/cabernet/extensions:/app/plugins_ext
-      - ${BASE_PATH}/cabernet/data:/app/data
+      - ${BASE_PATH}/dispatcharr/data:/data
+    depends_on:
+      - db
+      - redis
     environment:
-      - TZ=${TZ}
-      - PUID=${PUID}
-      - PGID=${PGID}
+      - POSTGRES_HOST=db
+      - POSTGRES_DB=${dispatcharr_db}
+      - POSTGRES_USER=${dispatcharr_user}
+      - POSTGRES_PASSWORD=${dispatcharr_password}
+      - REDIS_HOST=redis
+      - CELERY_BROKER_URL=redis://dispatcharr_redis:6379/0
+      - DISPATCHARR_LOG_LEVEL=info
+    # Optional for hardware acceleration
+    #group_add:
+    #  - video
+    #  #- render # Uncomment if your GPU requires it
+    #devices:
+    #  - /dev/dri:/dev/dri  # For Intel/AMD GPU acceleration (VA-API)
+    # Uncomment the following lines for NVIDIA GPU support
+    # NVidia GPU support (requires NVIDIA Container Toolkit)
+    #deploy:
+    #  resources:
+    #      reservations:
+    #          devices:
+    #              - driver: nvidia
+    #                count: all
+    #                capabilities: [gpu]
+
+  dispatcharr_celery:
+    image: ghcr.io/dispatcharr/dispatcharr:latest
+    container_name: dispatcharr_celery
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - ${BASE_PATH}/dispatcharr/celery:/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_DB=${dispatcharr_db}
+      - POSTGRES_USER=${dispatcharr_user}
+      - POSTGRES_PASSWORD=${dispatcharr_password}
+      - REDIS_HOST=redis
+      - CELERY_BROKER_URL=redis://dispatcharr_redis:6379/0
+    command: >
+      bash -c "
+      cd /app &&
+      nice -n 5 celery -A dispatcharr worker -l info
+      "
+
+  dispatcharr_db:
+    image: postgres:14
+    container_name: dispatcharr_db
+    ports:
+      - "5436:5432"
+    environment:
+      - POSTGRES_DB=${dispatcharr_db}
+      - POSTGRES_USER=${dispatcharr_user}
+      - POSTGRES_PASSWORD=${dispatcharr_password}
+    volumes:
+      - ${BASE_PATH}/dispatcharr/db:/appdata:/var/lib/postgresql/data
+
+  dispatcharr_redis:
+    image: redis:latest
+    container_name: dispatcharr_redis
       
   gluetun:
     image: qmcgaw/gluetun:latest
