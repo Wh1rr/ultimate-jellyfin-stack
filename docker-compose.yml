@@ -343,12 +343,10 @@ services:
       - starr
 
   dispatcharr:
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
     image: ghcr.io/dispatcharr/dispatcharr:latest
     container_name: dispatcharr
     network_mode: "service:gluetun"
+    user: ${PUID}:${PGID}
     volumes:
       - ${BASE_PATH}/dispatcharr/data:/data
     environment:
