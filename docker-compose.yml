@@ -353,10 +353,10 @@ services:
       - db
       - redis
     environment:
-      - POSTGRES_HOST=db
-      - POSTGRES_DB=${dispatcharr_db}
-      - POSTGRES_USER=${dispatcharr_user}
-      - POSTGRES_PASSWORD=${dispatcharr_password}
+      - POSTGRES_HOST=dispatcharr_db
+      - POSTGRES_DB=${DISPATCHARR_DB}
+      - POSTGRES_USER=${DISPATCHARR_USER}
+      - POSTGRES_PASSWORD=${DISPATCHARR_PASSWORD}
       - REDIS_HOST=redis
       - CELERY_BROKER_URL=redis://dispatcharr_redis:6379/0
       - DISPATCHARR_LOG_LEVEL=info
@@ -387,10 +387,10 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
-      - POSTGRES_HOST=db
-      - POSTGRES_DB=${dispatcharr_db}
-      - POSTGRES_USER=${dispatcharr_user}
-      - POSTGRES_PASSWORD=${dispatcharr_password}
+      - POSTGRES_HOST=dispatcharr_db
+      - POSTGRES_DB=${DISPATCHARR_DB}
+      - POSTGRES_USER=${DISPATCHARR_USERE}
+      - POSTGRES_PASSWORD=${DISPATCHARR_PASSWORD}
       - REDIS_HOST=redis
       - CELERY_BROKER_URL=redis://dispatcharr_redis:6379/0
     command: >
@@ -405,9 +405,9 @@ services:
     ports:
       - "5436:5432"
     environment:
-      - POSTGRES_DB=${dispatcharr_db}
-      - POSTGRES_USER=${dispatcharr_user}
-      - POSTGRES_PASSWORD=${dispatcharr_password}
+      - POSTGRES_DB=${DISPATCHARR_DB}
+      - POSTGRES_USER=${DISPATCHARR_USER}
+      - POSTGRES_PASSWORD=${DISPATCHARR_PASSWORD}
     volumes:
       - ${BASE_PATH}/dispatcharr/db:/appdata:/var/lib/postgresql/data
 
