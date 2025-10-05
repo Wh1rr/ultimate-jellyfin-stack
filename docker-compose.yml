@@ -389,7 +389,7 @@ services:
       - 2468:2468/tcp # cross-seed
       - 8080:8080/tcp # qBit
       - 8694:8694/tcp # qBit
-      - 5656:5656/tcp # kapowarr
+      - 5757:5757/tcp # kapowarr
       - 8191:8191/tcp # flaresolverr
       - 9696:9696/tcp # prowlarr
       - 7474:7474/tcp # autobrr
