@@ -244,6 +244,7 @@ services:
     container_name: bazarr
     image: lscr.io/linuxserver/bazarr:latest
     restart: unless-stopped
+    network_mode: "service:gluetun"
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -251,8 +252,6 @@ services:
     volumes:
       - ${BASE_PATH}/bazarr/config:/config
       - ${MEDIA_SHARE}:/data
-    ports:
-      - 6767:6767
     networks:
       - starr
       - proxy
@@ -394,6 +393,7 @@ services:
       - 9696:9696/tcp # prowlarr
       - 7474:7474/tcp # autobrr
       - 9191:9191 # dispatcharr
+      - 6767:6767 # bazarr
     networks:
       - starr
       - proxy
