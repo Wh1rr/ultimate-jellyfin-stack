@@ -51,6 +51,23 @@ An example folder structure:
 ![image](https://github.com/DonMcD/ultimate-plex-stack/assets/90471623/2003ac26-a929-4ff6-ad67-e35fc51fb51a)
   
 - Feel free to expand your folders to also include "books" or "music" as you need for your setup
+
+## Networking
+If you do want to create your networks externally, update the networks configuration with the following:
+Thanks @aquickalias :)
+
+```
+networks:
+  proxy:
+  jellyfin_default:
+  starr:
+  jellystat:
+  gluetun_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.100.0.0/16
+```
   
 ## Starr apps
 Setting up the starr apps might be a bit confusing the first time, but to keep it simple:
@@ -71,3 +88,7 @@ Anytime you reference your media folder in a container you want the path to look
 2. Install komodo to manage and monitor containers
 3. Use Cloudflare tunnels
 
+## Support + Additions
+
+If you need help or just want something added, please feel free to create an [issue](https://github.com/Wh1rr/ultimate-jellyfin-stack/issues).
+If you want to get a head start and get your changes in ASAP, feel free to open a [PR](https://github.com/Wh1rr/ultimate-jellyfin-stack/pulls). Which I'll review when possible.
