@@ -27,6 +27,10 @@ This Plex Stack includes the following services:
 - **[Jellystat](https://github.com/CyferShepard/Jellystat):** Used to monitor the usage of each user or content on your jellyfin server.
 - **[Janitorr](https://github.com/Schaka/janitorr):** Removes untagged media when it reaches a certain age, contains functionality for "Leaving Soon" content too.
 - **[Profilarr](https://github.com/Dictionarry-Hub/profilarr):** Used as a quality profile management tool that configures your radarr/sonarr installations
+- **[Homarr](https://github.com/homarr-labs/homarr):** A homepage creation service which can connect directly to other services in this stack
+- **[Dispatacharr](https://github.com/Dispatcharr/Dispatcharr):** A IPTV tuner with many tools on managing channels, EPGs, logos etc.
+- **[Unpackerr](https://github.com/Unpackerr/unpackerr):** A tool which handles all your torrents which come as archive files
+- **[Cross seed](https://github.com/cross-seed/cross-seed):** A service which takes your finished torrents and seeds them across your other trackers (check tracker TOS)
 
 ![containers](https://github.com/user-attachments/assets/855014b1-2716-4370-975d-a02564df881e)
 
