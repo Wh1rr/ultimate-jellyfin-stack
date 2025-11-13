@@ -6,27 +6,27 @@ Welcome to my Jellyfin stack repository! This repository showcases my Docker Com
 
 This Plex Stack includes the following services:
 
-- **Jellyfin:** Media server for streaming movies and TV shows.
-- **Radarr:** Movie management and automation.
-- **Sonarr:** TV show management and automation.
-- **Readarr:** Used to grab books and audiobooks.
-- **Lidarr:** Used to grab music.
-- **Kapowarr** Used to grab comics.
-- **Prowlarr:** Indexer manager for Radarr and Sonarr.
-- **Jellyseerr:** Request management and monitoring for Jellyfin.
-- **Gluetun:** VPN container with WireGuard support for secure browsing.
-- **Qbittorrent:** BitTorrent client with VPN support.
-- **Tdarr:** Pre-transcodes your media to decrease file sizes
-- **Bazarr:** Subtitle management for movies and TV shows.
-- **Autobrr:** Used to grab torrents immediately as they are released.
-- **Flaresolverr:** Used as a proxy server to bypass Cloudflare and DDoS-GUARD protection.
-- **Dozzle:** Used to view the logs of any container.
-- **Wizarr:** Used to create links that can be sent to users so they can be invited to your media server.
-- **Homarr:** Used as a dashboard for docker containers with integrations for the *arr, torrent, and Jellyfin apps.
-- **Decluttarr:** Used to maintain/clean your *arr app queues and downloads.
-- **Jellystat:** Used to monitor the usage of each user or content on your jellyfin server.
-- **Janitorr:** Removes untagged media when it reaches a certain age, contains functionality for "Leaving Soon" content too.
-- **Profilarr:** Used as a quality profile management tool that configures your radarr/sonarr installations
+- **[Jellyfin](https://github.com/linuxserver/docker-jellyfin):** Media server for streaming movies and TV shows.
+- **[Radarr](https://github.com/linuxserver/docker-radarr):** Movie management and automation.
+- **[Sonarr](https://github.com/linuxserver/docker-sonarr):** TV show management and automation.
+- **[Readarr](https://github.com/linuxserver/docker-readarr):** Used to grab books and audiobooks.
+- **[Lidarr](https://github.com/linuxserver/docker-lidarr):** Used to grab music.
+- **[Kapowarr](https://github.com/Casvt/Kapowarr):** Used to grab comics.
+- **[Prowlarr](https://github.com/linuxserver/docker-prowlarr):** Indexer manager for Radarr and Sonarr.
+- **[Jellyseerr](https://github.com/seerr-team/seerr):** Request management and monitoring for Jellyfin.
+- **[Gluetun](https://github.com/qdm12/gluetun):** VPN container with WireGuard support for secure browsing.
+- **[Qbittorrent](https://github.com/linuxserver/docker-qbittorrent):** BitTorrent client with VPN support.
+- **[Tdarr](https://github.com/HaveAGitGat/Tdarr):** Pre-transcodes your media to decrease file sizes
+- **[Bazarr](https://github.com/linuxserver/docker-bazarr):** Subtitle management for movies and TV shows.
+- **[Autobrr](https://github.com/autobrr/autobrr):** Used to grab torrents immediately as they are released.
+- **[Flaresolverr](https://github.com/AlexFozor/FlareSolverr/tree/drission-page):** Used as a proxy server to bypass Cloudflare and DDoS-GUARD protection.
+- **[Dozzle](https://github.com/amir20/dozzle):** Used to view the logs of any container.
+- **[Wizarr](https://github.com/wizarrrr/wizarr):** Used to create links that can be sent to users so they can be invited to your media server.
+- **[Homarr](https://github.com/homarr-labs/homarr):** Used as a dashboard for docker containers with integrations for the *arr, torrent, and Jellyfin apps.
+- **[Decluttarr](https://github.com/ManiMatter/decluttarr):** Used to maintain/clean your *arr app queues and downloads.
+- **[Jellystat](https://github.com/CyferShepard/Jellystat):** Used to monitor the usage of each user or content on your jellyfin server.
+- **[Janitorr](https://github.com/Schaka/janitorr):** Removes untagged media when it reaches a certain age, contains functionality for "Leaving Soon" content too.
+- **[Profilarr](https://github.com/Dictionarry-Hub/profilarr):** Used as a quality profile management tool that configures your radarr/sonarr installations
 
 ![containers](https://github.com/user-attachments/assets/855014b1-2716-4370-975d-a02564df881e)
 
