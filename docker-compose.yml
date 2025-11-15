@@ -252,9 +252,6 @@ services:
     volumes:
       - ${BASE_PATH}/bazarr/config:/config
       - ${MEDIA_SHARE}:/data
-    networks:
-      - starr
-      - proxy
       
   #Cross Seed - used to take torrents from one tracker and seed them on another without leeching first. Increases ratio
   #
