@@ -469,7 +469,7 @@ services:
           api_key: "$READARR_KEY"
      ## qBitorrent
      QBITTORRENT: >
-        - base_url: "http://gluetun:8989"
+        - base_url: "http://gluetun:8080"
           username: "$QBIT_USER"
           password: "$QBIT_PASS"
     networks:
