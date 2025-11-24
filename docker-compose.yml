@@ -456,21 +456,28 @@ services:
           "Not an upgrade for existing"
         ]'
      ## Radarr
-     RADARR_URL: http://radarr:7878
-     RADARR_KEY: $RADARR_KEY
+     RADARR: >
+        - base_url: "http://radarr:7878"
+          api_key: "$RADARR_KEY"
      ## Sonarr
-     SONARR_URL: http://sonarr:8989
-     SONARR_KEY: $SONARR_KEY
+     SONARR: >
+        - base_url: "http://sonarr:8989"
+          api_key: "$SONARR_KEY"
      ## Lidarr
+     LIDARR: >
+        - base_url: "http://lidarr:8989"
+          api_key: "$LIDAARR_KEY"
      LIDARR_URL: http://lidarr:8686
      LIDARR_KEY: $LIDARR_KEY
      ## Readarr
-     READARR_URL: http://readarr:8787
-     READARR_KEY: $READARR_KEY
+     READARR: >
+        - base_url: "http://readarr:8989"
+          api_key: "$READARR_KEY"
      ## qBitorrent
-     QBITTORRENT_URL: http://gluetun:8080
-     QBITTORRENT_USERNAME: $QBIT_USER
-     QBITTORRENT_PASSWORD: $QBIT_PASS
+     QBITTORRENT: >
+        - base_url: "http://sonarr:8989"
+          username: "$QBIT_USER"
+          password: "$QBIT_PASS"
     networks:
       - starr
       - proxy
