@@ -469,7 +469,7 @@ services:
           api_key: "$READARR_KEY"
      ## qBitorrent
      QBITTORRENT: >
-        - base_url: "http://sonarr:8989"
+        - base_url: "http://qbittorrent:8989"
           username: "$QBIT_USER"
           password: "$QBIT_PASS"
     networks:
