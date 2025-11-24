@@ -463,7 +463,7 @@ services:
      ## Lidarr
      LIDARR: >
         - base_url: "http://lidarr:8989"
-          api_key: "$LIDAARR_KEY"
+          api_key: "$LIDARR_KEY"
      ## Readarr
      READARR: >
         - base_url: "http://readarr:8989"
