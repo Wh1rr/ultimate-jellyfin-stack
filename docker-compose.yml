@@ -461,7 +461,7 @@ services:
           api_key: "$SONARR_KEY"
      ## Lidarr
      LIDARR: >
-        - base_url: "http://lidarr:8989"
+        - base_url: "http://lidarr:8686"
           api_key: "$LIDARR_KEY"
      ## Readarr
      READARR: >
