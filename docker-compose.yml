@@ -465,7 +465,7 @@ services:
           api_key: "$LIDARR_KEY"
      ## Readarr
      READARR: >
-        - base_url: "http://readarr:8989"
+        - base_url: "http://readarr:8787"
           api_key: "$READARR_KEY"
      ## qBitorrent
      QBITTORRENT: >
