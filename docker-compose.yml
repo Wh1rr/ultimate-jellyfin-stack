@@ -418,6 +418,7 @@ services:
       - 7575:7575
     networks:
       - proxy
+      - starr
 
   decluttarr:
     image: ghcr.io/manimatter/decluttarr:latest
