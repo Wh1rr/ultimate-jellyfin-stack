@@ -371,6 +371,7 @@ services:
     devices:
       - /dev/net/tun:/dev/net/tun
     environment:
+      - DNS_UPSTREAM_RESOLVERS=${GLUETUN_DNS_UPSTREAM_RESOLVERS:-gluetun}
       - VPN_SERVICE_PROVIDER=${VPN_SERVICE_PROVIDER:-mullvad}
       - VPN_TYPE=${VPN_TYPE:-wireguard}
       - WIREGUARD_PRIVATE_KEY=${WIREGUARD_KEY}
