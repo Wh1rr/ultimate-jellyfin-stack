@@ -413,6 +413,7 @@ services:
       - SECRET_ENCRYPTION_KEY=${HOMARR_KEY}
       - AUTH_PROVIDERS=${HOMARR_AUTH_PROVIDERS:-credentials} # To use oidc set this to oidc, if you want a local account backup use 'oidc,credentials'
       - AUTH_OIDC_ISSUER=${HOMARR_OIDC_ISSUER:-}
+      - AUTH_LOGOUT_REDIRECT_URL=${HOMARR_OIDC_LOGOUT_REDIRECT_URL:-}
       - AUTH_OIDC_CLIENT_ID=${HOMARR_OIDC_CLIENT_ID:-}
       - AUTH_OIDC_CLIENT_SECRET=${HOMARR_OIDC_CLIENT_SECRET:-}
       - AUTH_OIDC_CLIENT_NAME=${HOMARR_OIDC_CLIENT_NAME:-OIDC}
