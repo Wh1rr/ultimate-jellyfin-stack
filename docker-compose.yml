@@ -411,6 +411,7 @@ services:
     restart: unless-stopped
     environment:
       - SECRET_ENCRYPTION_KEY=${HOMARR_KEY}
+      - NEXTAUTH_SECRET=${HOMARR_NEXTAUTH_SECRET:-}
       - AUTH_PROVIDERS=${HOMARR_AUTH_PROVIDERS:-credentials} # To use oidc set this to oidc, if you want a local account backup use 'oidc,credentials'
       - AUTH_OIDC_ISSUER=${HOMARR_OIDC_ISSUER:-}
       - AUTH_LOGOUT_REDIRECT_URL=${HOMARR_OIDC_LOGOUT_REDIRECT_URL:-}
