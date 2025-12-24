@@ -523,6 +523,7 @@ services:
     networks:
       - jellystat
       - proxy
+      - starr
   
   janitorr:
     container_name: janitorr
