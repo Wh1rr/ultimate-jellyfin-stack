@@ -404,7 +404,7 @@ services:
       - proxy
       - gluetun_network
     # IF VPN CANNOT CONNECT, USE BELOW COMMAND TO UPDATE SERVERS.
-    # command: update -enduser -providers ${VPN_SERVICE_PROVIDER:-mullvad}
+    command: update -enduser -providers ${VPN_SERVICE_PROVIDER:-mullvad}
 
   homarr:
     container_name: homarr
