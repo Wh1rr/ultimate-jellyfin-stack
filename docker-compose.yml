@@ -79,7 +79,7 @@ services:
   
   #Readarr - Used to download books
   readarr:
-    image: lscr.io/linuxserver/readarr:0.4.19-nightly
+    image: ghcr.io/pennydreadful/bookshelf:softcover
     container_name: readarr
     environment:
       - PUID=${PUID}
