@@ -191,7 +191,7 @@ services:
   #
   #You can also use RuTorrent, Transmisson or Deluge
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest
+    image: lscr.io/linuxserver/qbittorrent:libtorrentv1
     container_name: qbittorrent
     network_mode: "service:gluetun"
     environment:
