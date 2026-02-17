@@ -13,7 +13,7 @@ This Plex Stack includes the following services:
 - **[Lidarr](https://github.com/linuxserver/docker-lidarr):** Used to grab music.
 - **[Kapowarr](https://github.com/Casvt/Kapowarr):** Used to grab comics.
 - **[Prowlarr](https://github.com/linuxserver/docker-prowlarr):** Indexer manager for Radarr and Sonarr.
-- **[Jellyseerr](https://github.com/seerr-team/seerr):** Request management and monitoring for Jellyfin.
+- **[Seerr](https://github.com/seerr-team/seerr):** Request management and monitoring for Jellyfin.
 - **[Gluetun](https://github.com/qdm12/gluetun):** VPN container with WireGuard support for secure browsing.
 - **[Qbittorrent](https://github.com/linuxserver/docker-qbittorrent):** BitTorrent client with VPN support.
 - **[Tdarr](https://github.com/HaveAGitGat/Tdarr):** Pre-transcodes your media to decrease file sizes

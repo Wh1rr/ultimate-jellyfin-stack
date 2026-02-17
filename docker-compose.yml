@@ -154,22 +154,28 @@ services:
     volumes:
       - ${BASE_PATH}/autobrr/config:/config
 
-  #jellyseer - allows users to request media on their own
-  jellyseerr:
-    image: fallenbagel/jellyseerr:latest
-    container_name: jellyseerr
+  #seerr - allows users to request media on their own
+  seerr:
+    image: ghcr.io/seerr-team/seerr:latest
+    container_name: seerr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${BASE_PATH}/jellyseerr/config:/app/config
+      - ${BASE_PATH}/seerr/config:/app/config
       - ${MEDIA_SHARE}:/data #Access to the entire ${BASE_PATH}
     networks:
       - proxy
       - starr
     ports:
       - 5055:5055
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/status || exit 1
+      start_period: 20s
+      timeout: 3s
+      interval: 15s
+      retries: 3
     restart: unless-stopped
     
   #Flaresolerr - Used as a proxy server to bypass Cloudflare and DDoS-GUARD protection.
@@ -387,8 +393,8 @@ services:
       - VPN_PORT_FORWARDING_DOWN_COMMAND=/bin/sh -c 'wget -O- --retry-connrefused --post-data "json={\"listen_port\":0,\"current_network_interface\":\"lo"}" http://127.0.0.1:8080/api/v2/app/setPreferences 2>&1'
       - UPDATER_PROTONVPN_EMAIL=${UPDATER_PROTONVPN_EMAIL}
       - UPDATER_PROTONVPN_PASSWORD=${UPDATER_PROTONVPN_PASSWORD}
-      - OPENVPN_USER=${OPENVPN_USER}
-      - OPENVPN_PASSWORD=${OPENVPN_PASSWORD}
+      - OPENVPN_USER=${OPENVPN_USER:-}
+      - OPENVPN_PASSWORD=${OPENVPN_PASSWORD:-}
     ports:
       - 2468:2468/tcp # cross-seed
       - 8080:8080/tcp # qBit
