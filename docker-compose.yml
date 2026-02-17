@@ -158,6 +158,7 @@ services:
   seerr:
     image: ghcr.io/seerr-team/seerr:latest
     container_name: seerr
+    init: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
