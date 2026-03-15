@@ -534,8 +534,8 @@ services:
   
   janitorr:
     container_name: janitorr
-    image: ghcr.io/schaka/janitorr:stable
-    user: ${PUID}:${PGID} # Replace with your user who should own your application.yml file
+    image: ghcr.io/schaka/janitorr:jvm-stable
+    user: ${PUID}:${PGID}
     volumes:
       - ${BASE_PATH}/janitorr/application.yml:/workspace/application.yml
       - ${BASE_PATH}/janitorr/logs:/logs
