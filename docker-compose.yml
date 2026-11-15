@@ -159,9 +159,8 @@ services:
     image: ghcr.io/seerr-team/seerr:latest
     container_name: seerr
     init: true
+    user: ${PUID}:${PGID}
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
       - TZ=${TZ}
     volumes:
       - ${BASE_PATH}/seerr/config:/app/config
